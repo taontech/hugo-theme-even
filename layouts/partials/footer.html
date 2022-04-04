@@ -64,22 +64,22 @@
     if (document.querySelectorAll('.language-mermaid').length > 0) {
       loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', () => {
         document.head.insertAdjacentHTML("beforeend", `<style>.mermaid svg { background-color: #ffffff !important; }</style>`);
-        // default, dark, neutral, forest
+        //default, dark, neutral, forest
         // mermaid.initialize({ startOnLoad: false, securityLevel: "strict", theme: "neutral" });
-        // // https://github.com/mermaid-js/mermaid/blob/e6e94ad57ea06ef8627bf91ddfbd88f5082952bf/src/mermaid.js#L153
-        // // mermaid.contentLoaded();
+        // https://github.com/mermaid-js/mermaid/blob/e6e94ad57ea06ef8627bf91ddfbd88f5082952bf/src/mermaid.js#L153
+        // mermaid.contentLoaded();
         // mermaid.init();
-        // console.log("mermaid init done");
+        console.log("mermaid init done");
 
-        var config = {
-          startOnLoad:true,
-          theme: 'forest',
-          flowchart:{
-            useMaxWidth:false,
-            htmlLabels:true
-          }
-        };
-        mermaid.initialize(config);
+        // var config = {
+        //   startOnLoad:true,
+        //   theme: 'forest',
+        //   flowchart:{
+        //     useMaxWidth:false,
+        //     htmlLabels:true
+        //   }
+        // };
+        mermaid.initialize({ startOnLoad: false, securityLevel: "strict", theme: "neutral" });
         window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
       })

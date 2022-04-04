@@ -224,7 +224,7 @@ Even.flowchart = function() {
   const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
   for (let i = 0; i < blocks.length; i++) {
     if (!window.hljs && i % 2 === 0) continue;
-
+    console.log(blocks[i]);
     const block = blocks[i];
     const rootElement = window.hljs
         ? block.parentElement
@@ -247,7 +247,7 @@ Even.sequence = function() {
   const blocks = document.querySelectorAll('pre code.language-sequence');
   for (let i = 0; i < blocks.length; i++) {
     if (!window.hljs && i % 2 === 0) continue;
-
+    console.log(blocks[i]);
     const block = blocks[i];
     const rootElement = window.hljs
         ? block.parentElement
