@@ -8,7 +8,7 @@ $(document).ready(function () {
 Even.responsiveTable();
 Even.flowchart();
 Even.sequence();
-// Even.mermaid();
+Even.mermaid();
 
 if (window.hljs) {
   hljs.initHighlighting();
