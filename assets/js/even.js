@@ -141,6 +141,10 @@ Even.fancybox = function() {
 
 Even.highlight = function() {
   const blocks = document.querySelectorAll('pre code');
+  
+  if (block.className.search("mermaid")!= -1){
+    return
+  }
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
     const rootElement = block.parentElement;
@@ -158,7 +162,7 @@ Even.highlight = function() {
       codeHtml += `<div class="line">${lineCodes[i]}</div>`;
     }
 
-    block.className += ' highlight';
+    block.className += '';
     const figure = document.createElement('figure');
     figure.className = block.className;
     figure.innerHTML = `<table><tbody><tr><td class="gutter"><pre>${codeLineHtml}</pre></td><td class="code"><pre>${codeHtml}</pre></td></tr></tbody></table>`;
@@ -277,7 +281,7 @@ Even.mermaid = function () {
 
     const block = blocks[i];
     const rootElement = window.hljs
-      ? block.parentElement
+      ? block.parentElement.parentElement
       : block.parentElement.parentElement.parentElement.parentElement
           .parentElement.parentElement.parentElement;
 
