@@ -141,11 +141,12 @@ Even.fancybox = function() {
 
 Even.highlight = function() {
   const blocks = document.querySelectorAll('pre code');
-  if (block.className.search("mermaid")!= -1){
-    return
-  }
+  
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
+    if (block.className.search("mermaid")!= -1){
+      continue;
+    }
     const rootElement = block.parentElement;
     const lineCodes = block.innerHTML.split(/\n/);
     if (lineCodes[lineCodes.length - 1] === '') lineCodes.pop();
