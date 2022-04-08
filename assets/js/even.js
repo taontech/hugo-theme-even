@@ -162,7 +162,7 @@ Even.highlight = function() {
       codeHtml += `<div class="line">${lineCodes[i]}</div>`;
     }
 
-    block.className += '';
+    block.className += ' highlight';
     const figure = document.createElement('figure');
     figure.className = block.className;
     figure.innerHTML = `<table><tbody><tr><td class="gutter"><pre>${codeLineHtml}</pre></td><td class="code"><pre>${codeHtml}</pre></td></tr></tbody></table>`;
